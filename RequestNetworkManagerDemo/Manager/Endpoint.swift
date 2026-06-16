@@ -13,7 +13,7 @@ struct Endpoint {
 	var urlString: String
 	// 请求的方法: get、post、patch、put、delete
 	var httpMethod: HTTPMethod
-	// 请求的头部信息
+	// 请求的头部信息，字典类型
 	private(set) var headers: [String: String] = [:]
 	
 	init(

@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct RequestNetworkManagerDemoApp: App {
+	@State private var userViewModel = UserViewModel()
+	
     var body: some Scene {
         WindowGroup {
             ContentView()
+				// 将UserViewModel对象放入到环境变量中
+				.environment(userViewModel)
         }
     }
 }

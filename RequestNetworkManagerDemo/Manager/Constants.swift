@@ -17,4 +17,12 @@ enum TestEndpoint {
 		urlString: TestURL.jokesURL,
 		httpMethod: .get
 	)
+	
+	static var userWithHeader = Endpoint(
+		urlString: TestURL.gorestURL,
+		httpMethod: .get
+	)
 }
+
+// GoRest的token
+let token = "f96fa55a0a1a18928d0fc7e342a79789de3d8fba4696494b72438a0754bb90c8"
