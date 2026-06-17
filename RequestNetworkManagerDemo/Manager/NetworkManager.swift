@@ -27,6 +27,26 @@ class NetworkManager {
 	}
 	
 	
+	//
+	func sendJSONAndDecodeResponse<Payload: Encodable, Result: Decodable>(
+		from endpoint: Endpoint,
+		payload: Payload,
+		configureDecoder: ((JSONDecoder) -> Void)? = nil
+	) async throws(NetworkError) -> Result {
+		var request = try endpoint.buildRequest()
+		
+		guard let encodedPayload = try? JSONEncoder().encode(payload) else {
+			throw NetworkError.decoding // MARK: 这里是否要新增一个encoding的NetworkError
+		}
+		request.httpBody = encodedPayload
+		
+		return try await executedAndDecodeJSON(
+			request: request,
+			configureDecoder: configureDecoder
+		)
+	}
+	
+	
 	// 共用的获取数据的部分
 	// 这里需要传入针对不同的请求的URLRequest对象，以及设置JSONDecoder的方法
 	// 抛出NetworkError异常

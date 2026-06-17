@@ -22,6 +22,11 @@ enum TestEndpoint {
 		urlString: TestURL.gorestURL,
 		httpMethod: .get
 	)
+	
+	static var createUser = Endpoint(
+		urlString: TestURL.gorestURL,
+		httpMethod: .post
+	)
 }
 
 // GoRest的token

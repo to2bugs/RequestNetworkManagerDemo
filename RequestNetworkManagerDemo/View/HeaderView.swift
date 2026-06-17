@@ -61,7 +61,7 @@ struct HeaderView: View {
 		.listStyle(.plain)
 		.task {
 			do {
-				try await viewModel.fetchUser()
+				try await viewModel.fetchUsers()
 			} catch {
 				print(error.localizedDescription)
 			}

@@ -13,7 +13,7 @@ struct RequestNetworkManagerDemoApp: App {
 	
     var body: some Scene {
         WindowGroup {
-            ContentView()
+			StartView()
 				// 将UserViewModel对象放入到环境变量中
 				.environment(userViewModel)
         }
