@@ -9,7 +9,7 @@ import Foundation
 
 enum TestURL {
 	static let jokesURL = "https://stewartlynch.github.io/Samples/jokes.json"
-	static let gorestURL = "https://gorest.co.in/public/v2/users"
+	static let gorestURL = "https://gorest.in/public/v2/users"
 }
 
 enum TestEndpoint {
